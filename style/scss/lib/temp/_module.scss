@@ -1,0 +1,48 @@
+
+
+/* Simple module */
+
+$variable-1: #000000;
+
+
+@mixin clearfix ()
+{
+  &:after
+  {
+    content:'';
+    display:table;
+    clear:both;
+  }
+}
+
+
+.module
+{
+  @include clearfix();
+
+  background:
+  {
+    color:rgba(0,255,0,0.2);
+  }
+
+  color:$variable-1;
+
+  padding:
+  {
+    top:2em;
+    left:2em;
+    bottom:2em;
+    right:2em;
+  }
+
+}
+
+.module__title
+{
+  font:
+  {
+    family: sans-serif;
+    size: 1em;
+    weight: normal;
+  }
+}

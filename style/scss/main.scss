@@ -1,0 +1,39 @@
+// Modules and Variables
+// @import "partials/base"; //[base imports modules]
+
+
+// Partials
+// @import "partials/reset";
+// @import "partials/typography";
+
+
+// Third-party libs
+// @import
+
+
+//==============================================================
+
+
+// Vendor Dependencies
+// @import "compass";
+
+// Authored Dependencies
+// @import "global/colors";
+// @import "global/mixins";
+
+// Patterns
+// @import "global/tabs";
+// @import "global/modals";
+
+// Sections
+// @import "global/header";
+// @import "global/footer";
+
+//==============================================================
+
+
+// Authored Dependencies
+// @import "lib/base/normalize";
+@import "lib/base/reset";
+// @import "lib/temp/temp";
+@import "lib/modules/ui.accordion.scss";

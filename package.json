@@ -1,0 +1,47 @@
+{
+  "name": "npmPipelineProject",
+  "version": "1.0.0",
+  "description": "Experimental project",
+  "main": "",
+  "author": "Liam Prescott",
+  "license": "ISC",
+  "private": true,
+  "config": {},
+  "devDependencies": {
+    "autoprefixer": "^5.1.1",
+    "csslint": "^0.10.0",
+    "cssmin": "^0.4.3",
+    "node-sass" : "^3.0.0"
+  },
+  "scripts": {
+
+    "build"                      : "node-sass style/scss/main.scss | autoprefixer | cssmin > style/css/main.min.css",
+
+    "build:lint"                 : "npm run compile:css:dev && npm run css:lint -- style/css/main.css style/css/modules.css",
+
+    "build:dev"                  : "npm run compile:css:dev && npm run css:prefix",
+
+    "compile:css:dev"            : "npm run compile:css:main -- --source-map true --output-style expanded && npm run compile:css:modules -- --source-map true --output-style expanded",
+    "compile:css:deploy"         : "npm run compile:css:main -- --output-style compressed && npm run compile:css:modules -- --output-style compressed",
+
+    "compile:css:main"           : "node-sass style/scss/main.scss style/css/main.css",
+    "compile:css:modules"        : "node-sass style/scss/modules.scss style/css/modules.css",
+
+    "css:prefix"                 : "autoprefixer style/css/main.css",
+
+    "format:css"                 : "cssmin -o style/css/main.min.css",
+
+    "css:lint"                   : "csslint --ignore=box-model,box-sizing"
+  },
+
+
+  "jshintConfig" : {
+    "loopfunc" : true
+  },
+
+
+  "bin" : {
+    "abc" : "bin/text.js"
+  }
+
+}

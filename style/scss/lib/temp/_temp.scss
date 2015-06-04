@@ -1,0 +1,41 @@
+
+// Some example Sass
+
+
+/* These are global module variables */
+
+$example-value-a: 200px;
+$example-color-a: rgba(0, 0, 0, 0.3);
+
+
+@mixin myMixin ()
+{
+  width: $example-value-a;
+  height: $example-value-a;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+
+
+.foo
+{
+  width: $example-value-a;
+
+  &:before
+  {
+    background-color:$example-color-a;
+
+  }
+
+  &--type-a
+  {
+    @include myMixin();
+
+    font-size:3em;
+
+    border-radius: 2em;
+
+  }
+}
